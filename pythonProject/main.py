@@ -9,6 +9,10 @@ import os
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY") #Chama a chave de segurando do arquivo .env
+ALGORITHM = os.getenv("ALGORITHM")
+ACCES_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCES_TOKEN_EXPIRE_MINUTES"))
+"""Variaveis de ambiente sempre originalemnte são criadas como str, para que elas possam ser utilizadas para
+fazer contas temos que mudar a tipagem para INT ou FLOAT"""
 
 app = FastAPI()
 
