@@ -3,6 +3,7 @@
 
 from fastapi import FastAPI
 from passlib.context import CryptContext
+from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
 import os
 
@@ -17,6 +18,7 @@ fazer contas temos que mudar a tipagem para INT ou FLOAT"""
 app = FastAPI()
 
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+oauth2_schema = OAuth2PasswordBearer(tokenUrl="auth/login-form")
 
 from auth_routes import auth_router
 from order_routes import order_router
