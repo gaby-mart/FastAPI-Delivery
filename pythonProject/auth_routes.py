@@ -93,7 +93,7 @@ async def login_form(
     if not usuario:
         # Mudado para 401 (Não autorizado), que é o padrão mais correto para credenciais incorretas
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, 
+            status_code= status.HTTP_401_UNAUTHORIZED, 
             detail="Usuário não encontrado ou credenciais inválidas"
         )
     
